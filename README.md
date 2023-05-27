@@ -24,10 +24,10 @@
 
 ## Требования к системе
 
-Для запуска программы необходимо установить Python 3.x и библиотеки tkinter, sqllite3, а также tkalendar(pip install tkcalendar).
+Для запуска программы необходимо установить Python 3.x и библиотеки tkinter, sqllite3, а также tkalendar(```pip install tkcalendar```).
 
 ## Установка и запуск
 
 1. Скачайте репозиторий на свой компьютер.
-2. Установите библиотеку tkinter и tkcalendar.
+2. Установите библиотеку ```tkinter``` и ```tkcalendar```.
 3. Запустите файл app.py в компиляторе.
