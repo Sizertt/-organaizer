@@ -211,7 +211,7 @@ class DB:
         if predicate == ">=":
             return f"{column} >= ?", value
         if predicate == "in":
-            return f"{column} IN (%s)"  % ','.join('?' for _ in value), value   # https://stackoverflow.com/questions/1309989/parameter-substitution-for-a-sqlite-in-clause
+            return f"{column} IN (%s)"  % ','.join('?' for _ in value), value 
         if predicate == "like":
             return f"LOWER({column}) LIKE ?", f"%{value.lower()}%"
 
