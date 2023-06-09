@@ -62,7 +62,6 @@ class Main(tk.Frame):
 
 
     def do_popup(self, event):
-        # display the popup menu
 
         for c in self.temp_controls:
             c.destroy()
