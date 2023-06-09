@@ -1,6 +1,7 @@
 from tkinter import *
 import pickle
 from tkinter import messagebox
+from difflib import SequenceMatcher
 
 from resources.scripts.DB import DB
 
@@ -79,6 +80,15 @@ class LoginForm():
 
             if self.db.get_user_id(username):
                 messagebox.showerror("Ошибка", f"Имя {username} уже занято, выберите другое")
+                return
+            
+            if len(username) < 4 or len(password) < 4:
+                messagebox.showerror("Ошибка", "Логин и пароль должны содержать не менее 4 символов")
+                return
+            
+            similarity = SequenceMatcher(None, username, password).ratio()
+            if similarity > 0.8:
+                messagebox.showerror("Ошибка", "Пароль не должен быть похожим на логин")
                 return
 
             user_id = self.db.register_user(username, password)
